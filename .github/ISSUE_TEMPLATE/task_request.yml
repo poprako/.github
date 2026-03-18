@@ -1,0 +1,79 @@
+name: 任务拆解
+description: 提交可执行任务（重构、工程、清理、维护等）
+title: "[Task] "
+labels:
+  - chore
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请把任务描述为“可执行、可验证、可交付”的形式。
+
+  - type: input
+    id: target-repo
+    attributes:
+      label: 目标仓库
+      placeholder: 例如 poprako / poprako-w / poprako-web
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: 任务目标
+      description: 简要说明任务目的与预期结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围说明
+      description: 明确 In Scope / Out of Scope
+      placeholder: |
+        In Scope:
+        - 
+        Out of Scope:
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: todo
+    attributes:
+      label: 执行清单
+      description: 拆成可追踪子任务
+      placeholder: |
+        - [ ] 子任务 1
+        - [ ] 子任务 2
+        - [ ] 子任务 3
+    validations:
+      required: true
+
+  - type: textarea
+    id: done-criteria
+    attributes:
+      label: 完成标准
+      description: 说明怎样判定任务完成
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      options:
+        - P0（紧急）
+        - P1（高）
+        - P2（中）
+        - P3（低）
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注
+      description: 依赖、风险、注意事项
+    validations:
+      required: false

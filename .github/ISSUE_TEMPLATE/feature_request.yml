@@ -1,0 +1,93 @@
+name: 功能需求
+description: 提交一个新的功能想法或产品改进建议
+title: "[Feature] "
+labels:
+  - feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提出功能建议。请尽量描述清楚业务背景、目标与验收标准。
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已经搜索过现有 Issue，确认不是重复需求
+          required: true
+
+  - type: input
+    id: target-repo
+    attributes:
+      label: 目标仓库
+      placeholder: 例如 poprako / poprako-w / poprako-web
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 需求背景
+      description: 当前遇到的问题或业务痛点是什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标与收益
+      description: 这个需求解决什么问题，带来什么价值？
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 方案描述
+      description: 描述你期望的实现方案（可分步骤）
+      placeholder: |
+        - 方案 A:
+        - 方案 B:
+        - 推荐方案:
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 用可验证的标准描述“何为完成”
+      placeholder: |
+        - [ ] 场景 1...
+        - [ ] 场景 2...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      options:
+        - P0（紧急）
+        - P1（高）
+        - P2（中）
+        - P3（低）
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: 风险与依赖
+      description: 说明技术风险、跨团队依赖、外部资源需求
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考资料
+      description: 相关文档、竞品链接、原型图等
+    validations:
+      required: false

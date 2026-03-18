@@ -1,0 +1,107 @@
+name: Bug 反馈
+description: 报告一个可复现的问题，帮助我们快速定位与修复
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的反馈。请尽量完整填写以下内容，信息越完整，修复越快。
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已经搜索过现有 Issue，确认不是重复问题
+          required: true
+        - label: 我已使用最新代码/版本复现该问题
+          required: true
+
+  - type: input
+    id: affected-repo
+    attributes:
+      label: 影响仓库
+      description: 例如 poprako / poprako-w / poprako-web
+      placeholder: 请输入仓库名
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 版本/提交信息
+      description: 可填写版本号或 commit hash
+      placeholder: 例如 v0.2.1 或 a1b2c3d
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 严重程度
+      options:
+        - blocker（阻断：核心流程不可用）
+        - high（高：主要功能明显异常）
+        - medium（中：存在替代方案）
+        - low（低：体验问题或边缘场景）
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: 运行环境
+      description: 请填写系统、运行时、浏览器、数据库等信息
+      placeholder: |
+        - OS:
+        - Go/Node 版本:
+        - 浏览器版本:
+        - 数据库版本:
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请使用有序步骤，确保他人可复现
+      placeholder: |
+        1. 进入...
+        2. 点击...
+        3. 输入...
+        4. 观察到...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志/截图/补充信息
+      description: 可粘贴错误日志、截图、录屏链接
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影响范围
+      description: 说明影响了哪些用户、场景或业务流程
+    validations:
+      required: false

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全问题上报
+    url: https://github.com/poprako/.github/security/policy
+    about: 请勿公开提交安全漏洞，使用私密渠道联系维护者
+  - name: 快速上手文档
+    url: https://github.com/poprako/.github/blob/main/docs/quick-start.md
+    about: 新成员优先阅读快速上手文档

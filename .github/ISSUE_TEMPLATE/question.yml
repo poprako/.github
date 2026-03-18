@@ -1,0 +1,48 @@
+name: 使用咨询
+description: 提交使用问题、配置问题或流程咨询
+title: "[Question] "
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请描述你的目标、已尝试方案和遇到的错误，便于快速定位。
+
+  - type: input
+    id: target-repo
+    attributes:
+      label: 目标仓库
+      placeholder: 例如 poprako / poprako-w / poprako-web
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: 你想实现什么
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: 你已经尝试过什么
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: 错误信息/现象
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充上下文
+      description: 环境、版本、配置片段、截图链接等
+    validations:
+      required: false
